@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import Fs from "../pages/fs.png"
 import { useLogin } from '../components/contextReducer';
-
+import styles from "./login.module.css"
 export const SignUp = () => {
   const value=useLogin();
   const navigate = useNavigate();
@@ -43,7 +43,7 @@ export const SignUp = () => {
      e.preventDefault();
      console.log(credentials.password)
   try{
-    const res=await fetch("https://food-site-backend.onrender.com/api/createuser",{
+    const res=await fetch("http://localhost:5000/api/createuser",{
       method:"POST",
       headers:{
         'Content-Type':"application/json"
@@ -82,7 +82,7 @@ export const SignUp = () => {
 
 <div className="  w-100 d-flex justify-center rounded-5" style={{backgroundImage:`url(${Background})`,backgroundSize:"cover" ,backgroundRepeat:"no-repeat",height:"90vh",width:"100vw"}}>
      
-     <main className="w-50 m-auto border rounded-5 border-success p-3" style={{backdropFilter:"blur(10px)"}}>
+     <main className={`${styles.signup} m-auto border rounded-5 border-success p-3`} style={{backdropFilter:"blur(10px)"}}>
  <form className="text-white" onSubmit={sendData}>
  <ToastContainer
          position="top-center"

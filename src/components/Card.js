@@ -45,7 +45,7 @@ export const Card = (props) => {
 setSize(priceRef.current.value)
   },[])
   return (
-    <div className="card mt-2" style={{ width: "18rem" }}>
+    <div className="card mt-2 mx-auto" style={{ width: "18rem" }}>
       <img
         className="card-img-top"
         src={props.foodItem.img}

@@ -6,6 +6,7 @@ import Background from "./pizza-burger.webp"
 import Fs from "../pages/fs.png"
 import Navbar from "../components/Navbar"
 import { useLogin } from "../components/contextReducer";
+import styles from "./login.module.css"
 export default function Login() {
   const value=useLogin();
 
@@ -43,7 +44,7 @@ export default function Login() {
     e.preventDefault();
     console.log(credentials.password);
     try {
-      const res = await fetch("https://food-site-backend.onrender.com/api/loginuser", {
+      const res = await fetch("http://localhost:5000/api/loginuser", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -78,7 +79,7 @@ export default function Login() {
     <Navbar/>
      <div className=" h-100 w-100 d-flex justify-center" style={{backgroundImage:`url(${Background})`,backgroundSize:"cover" ,backgroundRepeat:"no-repeat",height:"100vh",width:"100vw"}}>
      
-      <main className="w-50 m-auto border border-success p-3 rounded-5" style={{backdropFilter:"blur(10px)"}}>
+      <main className={`${styles.login} m-auto border border-success p-3 rounded-5 `} style={{backdropFilter:"blur(10px)"}}>
   <form className="text-white" onSubmit={sendData}>
   <ToastContainer
           position="top-center"

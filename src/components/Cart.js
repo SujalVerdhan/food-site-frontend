@@ -18,7 +18,7 @@ export const Cart = (props) => {
       let UserEmail= localStorage.getItem("UserEmail");
       console.log(UserEmail)
       try{
-      let response=await fetch("https://food-site-backend.onrender.com/api/orderData",{
+      let response=await fetch("http://localhost:5000/api/orderData",{
         method:"POST"
        ,headers:{
         'Content-Type':"application/json",
