@@ -44,7 +44,7 @@ export default function Login() {
     e.preventDefault();
     console.log(credentials.password);
     try {
-      const res = await fetch("http://localhost:5000/api/loginuser", {
+      const res = await fetch("https://food-site-backend.onrender.com/api/loginuser", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -43,7 +43,7 @@ export const SignUp = () => {
      e.preventDefault();
      console.log(credentials.password)
   try{
-    const res=await fetch("http://localhost:5000/api/createuser",{
+    const res=await fetch("https://food-site-backend.onrender.com/api/createuser",{
       method:"POST",
       headers:{
         'Content-Type':"application/json"
